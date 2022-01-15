@@ -34,6 +34,8 @@
 - MongoDB
 - Mongoose
 - Express
+- EJS
+- eslint
 
 ## Features
 
@@ -61,10 +63,12 @@ Project Deliverables
 Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
 
 Proceed to describe how to install / setup one's local environment / get started with the project.
-Using terminal:-
-Scaffold an express application `npm install -g express-generator` and launch VS code.
-Without going through all the steps install npm project `npm init -y`.
-......
+
+1. Using terminal:-
+
+- Scaffold an express application `npm install -g express-generator` and launch VS code.
+- Without going through all the steps install npm project `npm init -y`.
+  ......
 
 ## Development Stage
 
