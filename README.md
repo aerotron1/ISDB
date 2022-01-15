@@ -21,6 +21,8 @@
 ## General Information
 
 - Provide general information about your project here.
+  User Story:-
+  > [_here_](https://miro.com/app/board/uXjVOVHkNlY=/)
 - What problem does it (intend to) solve?
 - What is the purpose of your project?
 - Why did you undertake it?
@@ -43,7 +45,8 @@ List the ready features here:
 
 ## Screenshots
 
-![Example screenshot](./img/screenshot.png)
+![User Story](./public/images/UserStory.png)
+![Schema Model](./public/images/Schema.png)
 
 <!-- If you have screenshots you'd like to share, include them here. -->
 
