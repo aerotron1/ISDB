@@ -71,11 +71,10 @@ Without going through all the steps install npm project `npm init -y`.
 
 - Created the ISDB express app on vs code.
 - Sketched a model diagram for the schema.
+- Start user stories.
+- Deploy express App and removed unused code.
 
 2. What are you going to work on next
-
-- Start user stories.
-- Deploy express App.
 
 3. What blockers you have (if any)
 
