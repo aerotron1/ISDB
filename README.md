@@ -88,8 +88,8 @@ Proceed to describe how to install / setup one's local environment / get started
 
 - Created the ISDB express app on vs code.
 - Sketched a model diagram for the schema.
-- Start user stories.
-- Deploy express App and removed unused code.
+- Started user stories.
+- Deployed express App and removed unused code.
 
 2. What are you going to work on next
 
