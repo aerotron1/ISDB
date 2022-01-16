@@ -1,7 +1,7 @@
 # ISDB-App
 
-> Outline a brief description of your project.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+> This project follows on from IMDB (Internet Movie Database), launching and plan to sell on an ISDB (Internet Song Database). The collection includes more than 3000 tracks from 300+ albums.
+> Live demo [_here_](https://deploy-isdb.herokuapp.com/). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
 
@@ -20,11 +20,20 @@
 
 ## General Information
 
-- Provide general information about your project here.
-  User Story:-
-  > [_here_](https://miro.com/app/board/uXjVOVHkNlY=/)
+> Purpose of the project is to design an API on ISDB. This is so customers can build various front ends needed to use the database.
+> User Story:-
+> [_here_](https://miro.com/app/board/uXjVOVHkNlY=/)
+> This API provieds the folling endpoints:-
+
+- /register
+- /login
+- /tracks/:id
+- /genres
+- /albums
+- /tracks
+- /artists/:id
+
 - What problem does it (intend to) solve?
-- What is the purpose of your project?
 - Why did you undertake it?
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
@@ -68,6 +77,7 @@ Proceed to describe how to install / setup one's local environment / get started
 
 - Scaffold an express application `npm install -g express-generator` and launch VS code.
 - Without going through all the steps install npm project `npm init -y`.
+- Installed eslint used in two cases, adhere to set standard and how it was violated.
   ......
 
 ## Development Stage
@@ -82,6 +92,10 @@ Proceed to describe how to install / setup one's local environment / get started
 - Deploy express App and removed unused code.
 
 2. What are you going to work on next
+
+- Implement project data and create entities for tracks, albums, artists and genres.
+- Define and create a Schema and model with reference to the model diagram.
+- Create ejs files.
 
 3. What blockers you have (if any)
 
@@ -122,7 +136,7 @@ Give credit here.
 
 ## Contact
 
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by [Stanton]() - feel free to contact me!
 
 <!-- Optional -->
 <!-- ## License -->
