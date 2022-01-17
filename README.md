@@ -120,14 +120,14 @@ Proceed to describe how to install / setup one's local environment / get started
 3. What blockers you have (if any)
 
 - App Error when launching it. Going through github commits to see if changes caused the error. Error caused due to tracks.js model code.
-- Error received when uploading data using mongorestore. Used mongoimport but issue arised with incorrect connection string.
+- Error received when uploading data using mongorestore. Used mongoimport to upload all csv files.
 
 17/01/22
 
 1. What have you done so far
 
 - Upload data .csv files using mongoimport in the correct connection string.
-- Look into user entity, fix the error on user model..
+- Look into user entity, fix the error on user model.
 
 2. What are you going to work on next
 
