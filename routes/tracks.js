@@ -1,28 +1,15 @@
-const mongoose = require('mongoose');
+const express = require('express')
+const { router } = require('../app')
+const { Tracks } = require('../models/tracks')
 
-
-const trackSchema = new mongoose.Schema({
-    id: {
-        type: Number,
-        required: true
-    },
-    title: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    genre: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    albumInformation: {
-        type: String,
-        required: true,
-        trim: true
-    },
+router.get('/tracks/TrackId:', (req, res) => {
+    Tracks.find | ({TrackId: req.params.TrackId}, function (err, tracks) {
+        if (err) {
+            res.status(400).json({
+                message: err
+            });
+        } else {
+            res.json(tracks);
+        }
+    });
 });
-
-const Track = mongoose.model('Track', trackSchema);
-
-module.exports = { Track };
