@@ -3,8 +3,10 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 
+// import routes
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const trackRoutes = require('./routes/tracks')
 
 const app = express();
 
@@ -17,8 +19,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// attach endpoints 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/tracks',trackRoutes)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

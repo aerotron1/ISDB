@@ -1,5 +1,5 @@
 const express = require('express')
-const { router } = require('../app')
+const { router } = express.router()
 const { Tracks } = require('../models/tracks')
 
 router.get('/tracks/TrackId:', (req, res) => {
@@ -13,3 +13,5 @@ router.get('/tracks/TrackId:', (req, res) => {
         }
     });
 });
+
+module.exports = router;
