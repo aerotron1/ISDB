@@ -90,7 +90,7 @@ Proceed to describe how to install / setup one's local environment / get started
 - Created the ISDB express app on vs code.
 - Sketched a model diagram for the schema.
 - Started user stories.
-- Deployed express App using Mongodb Atlas and Heroku - Removed unused code.
+- Deployed express App using Mongodb Atlas and Heroku
 
 2. What are you going to work on next
 
@@ -115,6 +115,7 @@ Proceed to describe how to install / setup one's local environment / get started
 - Implement project data and create entities for albums, artists and genres.
 - Define and create a Schema and model with reference to the model diagram.
 - Upload data .csv files using mongorestore
+- Removed unused code using eslint.
 - Create ejs files.
 
 3. What blockers you have (if any)
@@ -128,6 +129,7 @@ Proceed to describe how to install / setup one's local environment / get started
 
 - Upload data .csv files using mongoimport in the correct connection string.
 - Look into user entity, fix the error on user model.
+- Removed unused code using eslint.
 
 2. What are you going to work on next
 

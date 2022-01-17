@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const { CurrentUser } = require('./models/user');
+//const { CurrentUser } = require('./models/user');
 
 const users = [
   { username: 'Alice', id: '1' },
