@@ -126,11 +126,13 @@ Proceed to describe how to install / setup one's local environment / get started
 
 1. What have you done so far
 
-- Work on user model..
+- Upload data .csv files using mongoimport in the correct connection string.
+- Look into user entity, fix the error on user model..
 
 2. What are you going to work on next
 
--
+- Look into the rest of the entities.
+- Add content to the ejs files and remove jade.
 
 3. What blockers you have (if any)
 
