@@ -77,6 +77,7 @@ Proceed to describe how to install / setup one's local environment / get started
 
 - Scaffold an express application `npm install -g express-generator` and launch VS code.
 - Without going through all the steps install npm project `npm init -y`.
+- Installed nodemon in the dev enviroment as it's not required in global enviroment during production `npm install --save-dev nodemon`
 - Installed eslint used in two cases, adhere to set standard and how it was violated.
   ......
 
@@ -89,17 +90,51 @@ Proceed to describe how to install / setup one's local environment / get started
 - Created the ISDB express app on vs code.
 - Sketched a model diagram for the schema.
 - Started user stories.
-- Deployed express App and removed unused code.
+- Deployed express App using Mongodb Atlas and Heroku - Removed unused code.
 
 2. What are you going to work on next
 
-- Implement project data and create entities for tracks, albums, artists and genres.
+- Implement project data and create entities for users, tracks, albums, artists and genres.
 - Define and create a Schema and model with reference to the model diagram.
+- Upload data .csv files using mongorestore
 - Create ejs files.
 
 3. What blockers you have (if any)
 
 - Create user stories for API.
+
+16/01/22
+
+1. What have you done so far
+
+- Implement project data and create entities for tracks.
+- Define and create a Schema and model for tracks with reference to the model diagram.
+
+2. What are you going to work on next
+
+- Implement project data and create entities for albums, artists and genres.
+- Define and create a Schema and model with reference to the model diagram.
+- Upload data .csv files using mongorestore
+- Create ejs files.
+
+3. What blockers you have (if any)
+
+- App Error when launching it. Going through github commits to see if changes caused the error. Error caused due to tracks.js model code.
+- Error received when uploading data using mongorestore. Used mongoimport but issue arised with incorrect connection string.
+
+17/01/22
+
+1. What have you done so far
+
+- Work on user model..
+
+2. What are you going to work on next
+
+-
+
+3. What blockers you have (if any)
+
+-
 
 ## Usage
 
