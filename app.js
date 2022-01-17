@@ -16,13 +16,13 @@ app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // attach endpoints 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/tracks',trackRoutes)
+//app.use('/tracks',trackRoutes)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
