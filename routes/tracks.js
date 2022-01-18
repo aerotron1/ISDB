@@ -3,10 +3,10 @@
 // const { Tracks } = require('../models/tracks')
 
 // router.get('/tracks/TrackId:', (req, res) => {
-//     Tracks.find | ({TrackId: req.params.TrackId}, function (err, tracks) {
-//         if (err) {
+//     Tracks.find | ({TrackId: req.params.TrackId}, function (error, tracks) {
+//         if (error) {
 //             res.status(400).json({
-//                 message: err
+//                 message: error
 //             });
 //         } else {
 //             res.json(tracks);

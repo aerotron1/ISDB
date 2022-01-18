@@ -133,12 +133,27 @@ Proceed to describe how to install / setup one's local environment / get started
 
 2. What are you going to work on next
 
-- Look into the rest of the entities.
-- Add content to the ejs files and remove jade.
+- Look into the rest of the entities and add token based authorisation where required.
+- Add content to the ejs files for backend and remove jade. ??
 
 3. What blockers you have (if any)
 
 -
+
+18/01/22
+
+1. What have you done so far
+
+- Look into user entity, token based authorisatiion.
+
+2. What are you going to work on next
+
+- Look into the rest of the entities and add token based authorisation where required.
+
+3. What blockers you have (if any)
+
+- Multiple reference and type errors had to be debugged.
+- One particular type Error `jwtFromRequest: passportJwt.ExtractJwt.fromAuthHeaderWithScheme('jwt'),` was undefined which caused delay in moving to the next step.
 
 ## Usage
 
@@ -169,8 +184,15 @@ To do:
 
 Give credit here.
 
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
+This project was based on class tutorials
+
+- API Authentication
+
+Other resources used for the project include : -
+
+- [MongoDB] (https://www.mongodb.com/developer/article/mongoose-versus-nodejs-driver/).
+- [Mongoose](https://mongoosejs.com/docs/guide.html).
+- [Models](https://mongoosejs.com/docs/models.html).
 - Many thanks to...
 
 ## Contact

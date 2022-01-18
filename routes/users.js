@@ -1,56 +1,62 @@
-const express = require('express');
+const express = require('express')
+const app = express()
+const jwt = require('jsonwebtoken')
+const passportJwt = require('passport-jwt')
 
-const router = express.Router();
+const { User } = require('../models/users')
 
-//const { CurrentUser } = require('./models/user');
+const jwtOptions = {
+    jwtFromRequest: passportJwt.ExtractJwt.fromAuthHeaderWithScheme('jwt'),
+    secretOrKey: 'a@s!k#'
+}
 
-const users = [
-  { username: 'Alice', id: '1' },
-  { username: 'Bob', id: '2' },
-];
-
-/* GET users listing. */
-router.get('/', (req, res, next) => {
-  res.json(users);
-});
-
-router.post('/', (req, res, next) => {
-  if (req.body.username && req.body.id) {
-    res.status(201).json({ message: 'user created' });
+app.post("/login", (req, res) => {
+  if (req.body.username && req.body.password) {
+    User.findOne({ username: req.body.username }, (error, user) => {
+      if (user) {
+        user.authenticate(req.body.password, (error, user) => {
+          if (error) {
+            res.status(401).json({ message: 'Invalid username or password'})
+          } else {
+            const token = jwt.sign({ username: user.username }, jwtOptions.secretOrKey);
+            res.status(200).json({message: `Hello, ${user.username}`, token: token})
+          }
+        })
+      } else {
+        res.status(401).json({message: 'Invalid username or password'})
+      }
+    })
   } else {
-    res.status(400).json({ message: 'expected username and id' });
+    res.status(401).json({message: 'Enter username and password'})
+  }
+})
+
+app.post('/register', (req, res) => {
+  if (req.body.username && req.body.password) {
+    User.findOne({ username: req.body.username }, (error, user) => {
+      if (error) {
+        res.status(401).json(error)
+      } else if (user) {
+        res.status(401).json({ message: 'Username unavailable' })
+      } else {
+        const newUser = new User({ username: req.body.username })
+        
+        User.register(
+          newUser,
+          req.body.password,
+          (error) => {
+            if (error) { res.status(401).json(error) }
+            else {
+              res.status(201).json({ message: "Registered" })
+            }
+          }
+        )
+      }
+    })
+  } else {
+    res.status(401).json({ message: 'Enter username and password' })
   }
 });
 
-router.put('/:id', (req, res, next) => {
-  if (req.body.username && req.body.id) {
-    const user = users.find((aUser) => aUser.id === req.params.id);
-    if (user) {
-      res.status(200).json({ message: 'updated user entry' });
-    } else {
-      res.status(404).json({ message: 'user not found' });
-    }
-  } else {
-    res.status(400).json({ message: 'expected username and id' });
-  }
-});
 
-router.get('/:id', (req, res, next) => {
-  const user = users.find((aUser) => aUser.id === req.params.id);
-  if (user) {
-    res.status(200).json(user);
-  } else {
-    res.status(404).json({ message: 'user not found' });
-  }
-});
-
-router.delete('/:id', (req, res, next) => {
-  const user = users.find((aUser) => aUser.id === req.params.id);
-  if (user) {
-    res.status(200).json({ message: 'deleted user entry' });
-  } else {
-    res.status(404).json({ message: 'user not found' });
-  }
-});
-
-module.exports = router;
+module.exports = app;
