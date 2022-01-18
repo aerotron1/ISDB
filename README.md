@@ -135,6 +135,7 @@ Proceed to describe how to install / setup one's local environment / get started
 
 - Look into the rest of the entities and add token based authorisation where required.
 - Define and create a Schema and model with reference to the model diagram for all entities.
+- Update routes with required methods.
 - Add content to the ejs files for backend and remove jade. ??
 
 3. What blockers you have (if any)
@@ -147,6 +148,7 @@ Proceed to describe how to install / setup one's local environment / get started
 
 - Look into user entity, token based authorisatiion.
 - Define and create a Schema and model with reference to the model diagram for all entities.
+- Update routes with required methods.
 
 2. What are you going to work on next
 

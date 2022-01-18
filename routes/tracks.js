@@ -14,4 +14,7 @@ router.get('/tracks/TrackId:', (req, res) => {
     });
 });
 
+router.post('/tracks', (req, res) => {
+    
+})
 module.exports = router;
