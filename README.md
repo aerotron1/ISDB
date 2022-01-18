@@ -113,7 +113,7 @@ Proceed to describe how to install / setup one's local environment / get started
 2. What are you going to work on next
 
 - Implement project data and create entities for albums, artists and genres.
-- Define and create a Schema and model with reference to the model diagram.
+- Define and create a Schema and model with reference to the model diagram for all entities.
 - Upload data .csv files using mongorestore
 - Removed unused code using eslint.
 - Create ejs files.
@@ -134,6 +134,7 @@ Proceed to describe how to install / setup one's local environment / get started
 2. What are you going to work on next
 
 - Look into the rest of the entities and add token based authorisation where required.
+- Define and create a Schema and model with reference to the model diagram for all entities.
 - Add content to the ejs files for backend and remove jade. ??
 
 3. What blockers you have (if any)
@@ -145,6 +146,7 @@ Proceed to describe how to install / setup one's local environment / get started
 1. What have you done so far
 
 - Look into user entity, token based authorisatiion.
+- Define and create a Schema and model with reference to the model diagram for all entities.
 
 2. What are you going to work on next
 

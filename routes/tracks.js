@@ -1,17 +1,17 @@
-// const express = require('express')
-// const { router } = express.router()
-// const { Tracks } = require('../models/tracks')
+const express = require('express')
+const { router } = express.router()
+const { Track } = require('../models/tracks')
 
-// router.get('/tracks/TrackId:', (req, res) => {
-//     Tracks.find | ({TrackId: req.params.TrackId}, function (error, tracks) {
-//         if (error) {
-//             res.status(400).json({
-//                 message: error
-//             });
-//         } else {
-//             res.json(tracks);
-//         }
-//     });
-// });
+router.get('/tracks/TrackId:', (req, res) => {
+    Track.find | ({ TrackId: req.params.TrackId }, function (error, track) {
+        if (error) {
+            res.status(400).json({
+                message: error
+            });
+        } else {
+            res.json(track);
+        }
+    });
+});
 
-// module.exports = router;
+module.exports = router;
