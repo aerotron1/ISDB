@@ -133,7 +133,7 @@ Proceed to describe how to install / setup one's local environment / get started
 
 2. What are you going to work on next
 
-- Look into the rest of the entities and add token based authorisation where required.
+- Look into the rest of the endpoints and add token based authorisation where required.
 - Define and create a Schema and model with reference to the model diagram for all entities.
 - Update routes with required methods.
 - Add content to the ejs files for backend and remove jade. ??
@@ -146,13 +146,13 @@ Proceed to describe how to install / setup one's local environment / get started
 
 1. What have you done so far
 
-- Look into user entity, token based authorisatiion.
+- Look into user endpoint, token based authorisatiion.
 - Define and create a Schema and model with reference to the model diagram for all entities.
 - Update routes with required methods.
 
 2. What are you going to work on next
 
-- Look into the rest of the entities and add token based authorisation where required.
+- Look into the rest of the endpoints and add token based authorisation where required.
 
 3. What blockers you have (if any)
 
@@ -197,6 +197,7 @@ Other resources used for the project include : -
 - [MongoDB] (https://www.mongodb.com/developer/article/mongoose-versus-nodejs-driver/).
 - [Mongoose](https://mongoosejs.com/docs/guide.html).
 - [Models](https://mongoosejs.com/docs/models.html).
+- [Express-Middleware] (https://expressjs.com/en/resources/middleware.html).
 - Many thanks to...
 
 ## Contact
