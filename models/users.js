@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
+//extends the schema automating the password hashing part.
 userSchema.plugin(passportLocalMongoose);
 const User = mongoose.model('User', userSchema);
 

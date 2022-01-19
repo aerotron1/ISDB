@@ -1,13 +1,12 @@
 const express = require('express');
+const router  = express.Router();
+const {Album} = require('../models/albums');
 
-const { router } = express.router();
-const { Album } = require('../models/albums');
-
-router.get('/album/AlbumId:', (req, res) => {
-  Album.find | ({ TrackId: req.params.TrackId }, function (error, album) {
-    if (error) {
+router.get('/:AlbumId', (req, res) => {
+  Album.findOne ({ AlbumId: parseInt(req.params.AlbumId) }, function (error, album) {
+      if (error) {
       res.status(400).json({
-        message: error,
+        message: 'Unable to find Album'
       });
     } else {
       res.json(album);

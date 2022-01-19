@@ -7,8 +7,15 @@ const logger = require('morgan');
 // import routes
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-//const trackRoutes = require('./routes/tracks')
+const albumsRouter = require('./routes/albums');
+const tracksRoutes = require('./routes/tracks');
+const genresRoutes = require('./routes/genres');
+const artistsRoutes = require('./routes/artists');
 
+const Mongoose = require('mongoose');
+
+//Mongoose.connect('mongodb+srv://stanton:Password123@clusterisdb.i4vce.mongodb.net/isdb?retryWrites=true&w=majority')
+Mongoose.connect('mongodb://localhost:27017/isdb')
 const app = express();
 
 app.use(logger('dev'));
@@ -19,7 +26,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // attach endpoints 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-//app.use('/tracks',trackRoutes)
+app.use('/albums', albumsRouter);
+app.use('/tracks', tracksRoutes);
+app.use('/genres', genresRoutes);
+app.use('/artists', artistsRoutes);
+
+//app.use('/sales', albumsRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

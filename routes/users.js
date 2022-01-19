@@ -1,5 +1,5 @@
 const express = require('express')
-const app = express()
+const router = express.Router()
 const jwt = require('jsonwebtoken')
 const passportJwt = require('passport-jwt')
 
@@ -21,7 +21,7 @@ const strategy = new passportJwt.Strategy(jwtOptions, (jwtPayload, next) => {
 })
 
 
-app.post("/login", (req, res) => {
+router.post("/login", (req, res) => {
   if (req.body.username && req.body.password) {
     User.findOne({ username: req.body.username }, (error, user) => {
       if (user) {
@@ -42,7 +42,7 @@ app.post("/login", (req, res) => {
   }
 })
 
-app.post('/register', (req, res) => {
+router.post('/register', (req, res) => {
   if (req.body.username && req.body.password) {
     User.findOne({ username: req.body.username }, (error, user) => {
       if (error) {
@@ -70,4 +70,4 @@ app.post('/register', (req, res) => {
 });
 
 
-module.exports = app;
+module.exports = router;

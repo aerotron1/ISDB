@@ -1,28 +1,28 @@
 const mongoose = require('mongoose');
 
 const trackSchema = new mongoose.Schema({
-  trackId: {
+  TrackId: {
     type: Number,
     required: true,
     unique: true,
   },
-  name: {
+  Name: {
     type: String,
     required: true,
     trim: true,
   },
-  composer: {
+  Composer: {
     type: String,
     required: true,
     trim: true,
   },
-  milliseconds: {
+  Milliseconds: {
     type: Number,
   },
-  bytes: {
+  Bytes: {
     type: Number,
   },
-  unitPrice: {
+  UnitPrice: {
     type: Number,
     required: true,
   },

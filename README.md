@@ -23,7 +23,7 @@
 > Purpose of the project is to design an API on ISDB. This is so customers can build various front ends needed to use the database.
 > User Story:-
 > [_here_](https://miro.com/app/board/uXjVOVHkNlY=/)
-> This API provieds the folling endpoints:-
+> This API provides the following endpoints:-
 
 - /register
 - /login

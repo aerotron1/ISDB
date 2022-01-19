@@ -14,5 +14,4 @@ const strategy = new passportJwt.Strategy(jwtOptions, (jwtPayload, next) => {
 });
 
 passport.use(strategy);
-
 passport.use(User.createStrategy());
