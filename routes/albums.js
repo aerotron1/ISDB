@@ -4,12 +4,12 @@ const {Album} = require('../models/albums');
 
 router.get('/:AlbumId', (req, res) => {
   Album.findOne ({ AlbumId: parseInt(req.params.AlbumId) }, function (error, album) {
-      if (error) {
+    if (error) {
       res.status(400).json({
-        message: 'Unable to find Album'
+        message: error
       });
     } else {
-      res.json(album);
+      res.status(200).json(album);
     }
   });
 });

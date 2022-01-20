@@ -196,6 +196,7 @@ Other resources used for the project include : -
 
 - [MongoDB] (https://www.mongodb.com/developer/article/mongoose-versus-nodejs-driver/).
 - [Mongoose](https://mongoosejs.com/docs/guide.html).
+- [Queries] (https://mongoosejs.com/docs/queries.html).
 - [Models](https://mongoosejs.com/docs/models.html).
 - [Express-Middleware] (https://expressjs.com/en/resources/middleware.html).
 - Many thanks to...
