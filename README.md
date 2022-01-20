@@ -162,11 +162,13 @@ Proceed to describe how to install / setup one's local environment / get started
 
 1. What have you done so far
 
-- Fixed error with Routes by changing the mongodb connection from localhost to loopback address and reverted back. Which showed the data such as album information.
+- Fixed error with Routes by changing the mongodb connection from localhost to loopback address. Which showed the data such as album information.
+
+- Look into the rest of the endpoints and add token based authorisation where required.??
 
 2. What are you going to work on next
 
-- Look into the rest of the endpoints and add token based authorisation where required.
+- API documentation
 
 3. What blockers you have (if any)
 
