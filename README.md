@@ -156,8 +156,21 @@ Proceed to describe how to install / setup one's local environment / get started
 
 3. What blockers you have (if any)
 
-- Multiple reference and type errors had to be debugged.
+- Debugged multiple reference and type errors.
 - One particular type Error `jwtFromRequest: passportJwt.ExtractJwt.fromAuthHeaderWithScheme('jwt'),` was undefined which caused delay in moving to the next step.
+- Error with Routes unable to show data such as album information.
+
+20/01/22
+
+1. What have you done so far
+
+- Fixed error with Routes unable to show data such as album information.
+
+2. What are you going to work on next
+
+- Look into the rest of the endpoints and add token based authorisation where required.
+
+3. What blockers you have (if any)
 
 ## Usage
 
