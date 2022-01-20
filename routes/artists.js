@@ -9,7 +9,7 @@ router.get('/:ArtistId', (req, res) => {
                 message: ({ message: 'Unable to find Artist'})
             });
         } else {
-            res.json(artist);
+            res.status(200).json(artist);
         }
     });
 });

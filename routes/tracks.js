@@ -9,24 +9,36 @@ router.get('/:TrackId', (req, res) => {
         message: ({ message: 'Unable to find Track'})
       });
     } else {
-      res.json(track);
+      res.status(200).json(track);
     }
   });
 });
 
-router.post('/tracks', (req, res) => {
-  if (
-        req.params.name !== undefined
-        && req.params.composer !== undefined
-        && req.params.duration !== undefined
-  ) {
-    const newtrack = new Track({
-      name: req.params.name,
-      composer: req.params.composer,
-      duration: req.params.duration,
-    });
-  } else {
-    res.send('name, composer, duration');
-  }
-});
+router.post('/', (req, res) => {
+      if (
+        req.params.Name !== undefined && 
+        req.params.AlbumId !== undefined && 
+        req.params.GenreId !== undefined &&
+        req.params.Composer !== undefined &&
+        req.params.Milliseconds !== undefined &&
+        req.params.Bytes !== undefined &&
+        req.params.UnitPrice !== undefined ) {
+        const newTrack =  new Track(req.param);
+        newTrack.save((error, track) => {
+            if (error) {
+                res.status(400).json({
+                    message: error
+                });
+            } else {
+                res.status(201).json(track);
+            }
+        });
+    } else {
+        res.status(400).json({
+            message: "expected Name ,AlbumId, GenreId, Composer, Milliseconds Bytes and UnitPrice"
+        });
+    }
+})
+
+
 module.exports = router;
