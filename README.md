@@ -140,8 +140,6 @@ Proceed to describe how to install / setup one's local environment / get started
 
 3. What blockers you have (if any)
 
--
-
 18/01/22
 
 1. What have you done so far
@@ -164,7 +162,7 @@ Proceed to describe how to install / setup one's local environment / get started
 
 1. What have you done so far
 
-- Fixed error with Routes unable to show data such as album information.
+- Fixed error with Routes by changing the mongodb connection from localhost to loopback address and reverted back. Which showed the data such as album information.
 
 2. What are you going to work on next
 

@@ -15,7 +15,7 @@ const artistsRoutes = require('./routes/artists');
 const Mongoose = require('mongoose');
 
 //Mongoose.connect('mongodb+srv://stanton:Password123@clusterisdb.i4vce.mongodb.net/isdb?retryWrites=true&w=majority')
-Mongoose.connect('mongodb://127.0.01:27017/isdb')
+Mongoose.connect('mongodb://localhost:27017/isdb')
 const app = express();
 
 app.use(logger('dev'));
