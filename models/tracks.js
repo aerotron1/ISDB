@@ -4,12 +4,19 @@ const trackSchema = new mongoose.Schema({
   TrackId: {
     type: Number,
     required: true,
-    unique: true,
   },
   Name: {
     type: String,
     required: true,
     trim: true,
+  },
+  AlbumId: {
+    type: Number,
+    required: true
+  },
+  GenreId: {
+    type: Number,
+    required: true
   },
   Composer: {
     type: String,

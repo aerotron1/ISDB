@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
         newTrack.save((error, track) => {
             if (error) {
                 res.status(400).json({
-                    message: error
+                    message:({ message: 'Unable to create track record'})
                 });
             } else {
                 res.status(201).json(track);
@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
         });
     } else {
         res.status(400).json({
-            message: "expected Name ,AlbumId, GenreId, Composer, Milliseconds Bytes and UnitPrice"
+            message: "Fill Name ,AlbumId, GenreId, Composer, Milliseconds Bytes and UnitPrice"
         });
     }
 })

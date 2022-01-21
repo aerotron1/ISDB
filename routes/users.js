@@ -1,46 +1,31 @@
 const express = require('express')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
-const passportJwt = require('passport-jwt')
 
 const { User } = require('../models/users')
 
-const jwtOptions = {
-    jwtFromRequest: passportJwt.ExtractJwt.fromAuthHeaderWithScheme('jwt'),
-    secretOrKey: 'a@s!k#'
-}
-
-const strategy = new passportJwt.Strategy(jwtOptions, (jwtPayload, next) => {
-    console.log("from within strategy: ")
-    console.log(jwtPayload)
-
-    User.find(aUser => aUser.username === jwtPayload.username);
-
-    if (user) { next(null, user); }
-    else { next(null, false);}
-})
-
+// a hardcoded set of users mimicing a database
+const setUsers = [
+    { username: 'alice', password: 'bob' },
+    { username: 'bob', password: 'alice' }
+]
 
 router.post("/login", (req, res) => {
-  if (req.body.username && req.body.password) {
-    User.findOne({ username: req.body.username }, (error, user) => {
-      if (user) {
-        user.authenticate(req.body.password, (error, user) => {
-          if (error) {
-            res.status(401).json({ message: 'Invalid username or password'})
-          } else {
-            const token = jwt.sign({ username: user.username }, jwtOptions.secretOrKey);
-            res.status(200).json({message: `Hello, ${user.username}`, token: token})
-          }
-        })
-      } else {
-        res.status(401).json({message: 'Invalid username or password'})
-      }
-    })
+  if (req.params.username && req.params.password) {
+    const user = setUsers.find(aUser => aUser.username === req.params.username && aUser.password === req.params.password)
+    if (user) {
+      // gen token
+      const token = jwt.sign({ username: user.username }, jwtOptions.secretOrKey);
+      //send token back
+      res.status(200).json({ message: `Hello, ${user.username}`, token: token })
+    } else {
+      res.status(401).json({ message: 'Invalid username or password' })
+    }  
   } else {
-    res.status(401).json({message: 'Enter username and password'})
+      res.status(401).json({message: 'Enter username and password'})
   }
-})
+});
+
 
 router.post('/register', (req, res) => {
   if (req.body.username && req.body.password) {
@@ -68,6 +53,5 @@ router.post('/register', (req, res) => {
     res.status(401).json({ message: 'Enter username and password' })
   }
 });
-
 
 module.exports = router;

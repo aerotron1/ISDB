@@ -1,6 +1,6 @@
 # ISDB-App
 
-> This project follows on from IMDB (Internet Movie Database), launching and plan to sell on an ISDB (Internet Song Database). The collection includes more than 3000 tracks from 300+ albums.
+> This project follows on from IMDB (Internet Movie Database), launching and plan to sell on an ISDB API (Internet Song Database). The API provides access to a collection which includes more than 3000 tracks from 300+ albums.
 > Live demo [_here_](https://deploy-isdb.herokuapp.com/). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
@@ -20,7 +20,7 @@
 
 ## General Information
 
-> Purpose of the project is to design an API on ISDB. This is so customers can build various front ends needed to use the database.
+> Purpose of the project is to design an API to so the client can access the database. This is so customers can build various front ends needed to use the database. The API includes token based authentication to ensure people pay for access.
 > User Story:-
 > [_here_](https://miro.com/app/board/uXjVOVHkNlY=/)
 > This API provides the following endpoints:-
