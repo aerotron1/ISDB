@@ -1,7 +1,7 @@
 # ISDB-App
 
 > This project follows on from IMDB (Internet Movie Database), launching and plan to sell on an ISDB API (Internet Song Database). The API provides access to a collection which includes more than 3000 tracks from 300+ albums.
-> Live demo [_here_](https://deploy-isdb.herokuapp.com/). <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo [_here_](https://deploy-isdb.herokuapp.com/).
 
 ## Table of Contents
 
@@ -33,10 +33,6 @@
 - /tracks
 - /artists/:id
 
-- What problem does it (intend to) solve?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
-
 ## Technologies Used
 
 - Node.js
@@ -50,16 +46,14 @@
 
 List the ready features here:
 
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+- View the list of Albums by specifying the id.
+- Protected endpoints using token based authentication.
+- User password is not stored as a string but is hashed instead.
 
 ## Screenshots
 
 ![User Story](./public/images/UserStory.png)
 ![Schema Model](./public/images/Schema.png)
-
-<!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Setup
 
@@ -69,17 +63,17 @@ Project Deliverables
 - A GitHub repo that includes README file.
 - Supporting documentation and code.
 
-Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
 Proceed to describe how to install / setup one's local environment / get started with the project.
 
-1. Using terminal:-
-
+- Install the project requires a connection string of the local host or MongoDb deployment.
+- Once connected a few installations were carried out before the API was built. See below
+- Using terminal:-
 - Scaffold an express application `npm install -g express-generator` and launch VS code.
 - Without going through all the steps install npm project `npm init -y`.
 - Installed nodemon in the dev enviroment as it's not required in global enviroment during production `npm install --save-dev nodemon`
 - Installed eslint used in two cases, adhere to set standard and how it was violated.
-  ......
+
+- Use postman to see the results for example to view the genres ensure to use the token received when logged in. Under header specify the key: Authorisation and value: jwt [token key]. This will display the array of genres.
 
 ## Development Stage
 
@@ -133,10 +127,9 @@ Proceed to describe how to install / setup one's local environment / get started
 
 2. What are you going to work on next
 
-- Look into the rest of the endpoints and add token based authorisation where required.
+- Look into the rest of the endpoints to ensure all endpoints protected.
 - Define and create a Schema and model with reference to the model diagram for all entities.
 - Update routes with required methods.
-- Add content to the ejs files for backend and remove jade. ??
 
 3. What blockers you have (if any)
 
@@ -144,13 +137,13 @@ Proceed to describe how to install / setup one's local environment / get started
 
 1. What have you done so far
 
-- Look into user endpoint, token based authorisatiion.
 - Define and create a Schema and model with reference to the model diagram for all entities.
 - Update routes with required methods.
 
 2. What are you going to work on next
 
-- Look into the rest of the endpoints and add token based authorisation where required.
+- Fixed error with Routes by changing the mongodb connection from localhost to loopback address. Which showed the data such as album information.
+- Look into the rest of the endpoints to ensure all endpoints protected.
 
 3. What blockers you have (if any)
 
@@ -164,38 +157,64 @@ Proceed to describe how to install / setup one's local environment / get started
 
 - Fixed error with Routes by changing the mongodb connection from localhost to loopback address. Which showed the data such as album information.
 
-- Look into the rest of the endpoints and add token based authorisation where required.??
+2. What are you going to work on next
+
+- API documentation using swagger.
+
+3. What blockers you have (if any)
+
+- Unable to display successful login due to endpoint error when specifying /users instead required /login.
+- Following from above, the login parameters included req.param.username which was changed to req.body.username.
+
+21/01/22
+
+1. What have you done so far
+
+- API documentation using swagger.
+- Generated token for login page using authentication.
 
 2. What are you going to work on next
 
-- API documentation
+- Look into the rest of the endpoints to ensure all endpoints protected.
+- Setup user password to use Salt and Hash.
+
+3. What blockers you have (if any)
+
+21/01/22
+
+1. What have you done so far
+
+- Looked into the rest of the endpoints to ensure all endpoints protected.
+- Ensured user password used Salt and Hash.
+
+2. What are you going to work on next
 
 3. What blockers you have (if any)
 
 ## Usage
 
 How does one go about using it?
+
+- Can be used via Postman. This can be done via the deployment url specified in the introduction.
+
 Provide various use cases and code examples here.
 
-`write-your-code-here`
+- For example, this can be used when trying to find an array of genres:-
+  `router.get('/', (req, res) => { Genre.find({}, function (error, genres) { if (error) { res.status(400).json({ message: ({ message: 'Unable to find Genre'}) }); } else { res.status(200).json(genres); } }); });`
+- For example, this can be used when trying to find a specific Album by specifing the id e.g https://deploy-isdb.herokuapp.com/albums/2:-
+  `router.get('/:AlbumId', (req, res) => { Album.findOne ({ AlbumId: parseInt(req.params.AlbumId) }, function (error, album) { if (error) { res.status(400).json({ message: ({ message: 'Unable to find Album'}) }); } else { res.status(200).json(album); } }); });`
 
 ## Project Status
 
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+Project is: _in progress_ / _complete_
 
 ## Room for Improvement
 
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
 Room for improvement:
+While trying to get the application to work without errors or bugs and I ran out of time. So listed below some improvements to the application.
 
-- Improvement to be done 1
-- Improvement to be done 2
-
-To do:
-
-- Feature to be added 1
-- Feature to be added 2
+- Refactor code.
+- Implement a creative feature to the project such as being able to add, update, delete songs and a views using EJS files.
 
 ## Acknowledgements
 
@@ -203,23 +222,23 @@ Give credit here.
 
 This project was based on class tutorials
 
-- API Authentication
+- Introduction to MongoDB.
+- Introduction to Express and Mongoose.
+- Creating an API with Express & Mongoose.
+- API Authentication.
+- API Documentation.
 
 Other resources used for the project include : -
 
-- [MongoDB] (https://www.mongodb.com/developer/article/mongoose-versus-nodejs-driver/).
+- [MongoDB](https://www.mongodb.com/developer/article/mongoose-versus-nodejs-driver/).
 - [Mongoose](https://mongoosejs.com/docs/guide.html).
-- [Queries] (https://mongoosejs.com/docs/queries.html).
+- [Queries](https://mongoosejs.com/docs/queries.html).
 - [Models](https://mongoosejs.com/docs/models.html).
-- [Express-Middleware] (https://expressjs.com/en/resources/middleware.html).
-- Many thanks to...
+- [Express-Middleware](https://expressjs.com/en/resources/middleware.html).
+- [Server-Side-Express](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose).
+- [HTTP-response-status-code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+- [Swagger](https://swagger.io/specification/).
 
 ## Contact
 
 Created by [Stanton]() - feel free to contact me!
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->

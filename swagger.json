@@ -306,8 +306,8 @@
                             }
                         }
                     }, 
-                    "400": {
-                        "description": "Bad Request", 
+                    "404": {
+                        "description": "Requested Resource Not Found", 
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -348,8 +348,8 @@
                             }
                         }
                     }, 
-                    "400": {
-                        "description": "Bad Request", 
+                    "404": {
+                        "description": "Requested Resource Not Found", 
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -400,7 +400,7 @@
                         }
                     }, 
                     "404": {
-                        "description": "Bad Request", 
+                        "description": "Requested Resource Not Found", 
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -441,8 +441,8 @@
                             }
                         }
                     }, 
-                    "400": {
-                        "description": "Bad Request", 
+                    "404": {
+                        "description": "Requested Resource Not Found", 
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -576,13 +576,13 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/users"
+                                    "$ref": "#/components/schemas/login"
                                 }
                             }
                         }
                     }, 
                     "401": {
-                        "description": "Bad Request", 
+                        "description": "Unauthorised", 
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -617,13 +617,13 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/users"
+                                    "$ref": "#/components/schemas/register"
                                 }
                             }
                         }
                     }, 
                     "401": {
-                        "description": "Bad Request", 
+                        "description": "Unauthorised", 
                         "content": {
                             "application/json": {
                                 "schema": {

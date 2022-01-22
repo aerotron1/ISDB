@@ -1,11 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const passport = require('passport');
 const { Artist } = require('../models/artists')
 
-router.get('/:ArtistId', (req, res) => {
+router.get('/:ArtistId', passport.authenticate('jwt', {session:false}), (req, res) => {
     Artist.findOne({ ArtistId: parseInt(req.params.ArtistId) }, function (error, artist) {
         if (error) {
-            res.status(400).json({
+            res.status(404).json({
                 message: ({ message: 'Unable to find Artist'})
             });
         } else {

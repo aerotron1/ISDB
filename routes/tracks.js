@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport')
 const { Track } = require('../models/tracks');
 
-router.get('/:TrackId', (req, res) => {
+router.get('/:TrackId', passport.authenticate('jwt', {session:false}), (req, res) => {
   Track.findOne({ TrackId: parseInt(req.params.TrackId) }, function (error, track) {
     if (error) {
-      res.status(400).json({
+      res.status(404).json({
         message: ({ message: 'Unable to find Track'})
       });
     } else {
@@ -13,6 +14,7 @@ router.get('/:TrackId', (req, res) => {
     }
   });
 });
+
 
 router.post('/', (req, res) => {
       if (
