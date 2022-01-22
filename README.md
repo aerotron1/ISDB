@@ -20,7 +20,7 @@
 
 ## General Information
 
-> Purpose of the project is to design an API to so the client can access the database. This is so customers can build various front ends needed to use the database. The API includes token based authentication to ensure people pay for access.
+> Purpose of the project is to design an API so the client can access the database. This is so customers can build various front ends needed to use the database. The API includes token based authentication to ensure people pay for access.
 > User Story:-
 > [_here_](https://miro.com/app/board/uXjVOVHkNlY=/)
 > This API provides the following endpoints:-
@@ -54,6 +54,7 @@ List the ready features here:
 
 ![User Story](./public/images/UserStory.png)
 ![Schema Model](./public/images/Schema.png)
+![Genre](./public/images/postman-genre.png)
 
 ## Setup
 
@@ -63,7 +64,7 @@ Project Deliverables
 - A GitHub repo that includes README file.
 - Supporting documentation and code.
 
-Proceed to describe how to install / setup one's local environment / get started with the project.
+Install / setup one's local environment / get started with the project.
 
 - Install the project requires a connection string of the local host or MongoDb deployment.
 - Once connected a few installations were carried out before the API was built. See below
@@ -72,8 +73,8 @@ Proceed to describe how to install / setup one's local environment / get started
 - Without going through all the steps install npm project `npm init -y`.
 - Installed nodemon in the dev enviroment as it's not required in global enviroment during production `npm install --save-dev nodemon`
 - Installed eslint used in two cases, adhere to set standard and how it was violated.
-
-- Use postman to see the results for example to view the genres ensure to use the token received when logged in. Under header specify the key: Authorisation and value: jwt [token key]. This will display the array of genres.
+- Run npm start.
+- Use postman see to see the results for example to view the genres (see) ensure to use the token received when logged in. Under header specify the key: Authorisation and value: jwt [token key]. This will display the array of genres.
 
 ## Development Stage
 

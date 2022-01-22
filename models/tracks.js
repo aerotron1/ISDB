@@ -12,11 +12,11 @@ const trackSchema = new mongoose.Schema({
   },
   AlbumId: {
     type: Number,
-    required: true
+    required: true,
   },
   GenreId: {
     type: Number,
-    required: true
+    required: true,
   },
   Composer: {
     type: String,
