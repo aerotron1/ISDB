@@ -219,8 +219,6 @@ While trying to get the application to work without errors or bugs and I ran out
 
 ## Acknowledgements
 
-Give credit here.
-
 This project was based on class tutorials
 
 - Introduction to MongoDB.
